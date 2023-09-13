@@ -1,13 +1,5 @@
 const byteSize = (str) => new Blob([str]).size;
 const browserAPI = window.browser ? browser : chrome;
-// chrome.tabs.executeScript(
-//   {
-//     code: 'document.querySelector("#__OSVSTATE").value',
-//   },
-//   function (results) {
-//     document.getElementById("placeholder").value = results[0];
-//   }
-// );
 
 let [tab] = await browserAPI.tabs.query({ active: true, currentWindow: true });
 
