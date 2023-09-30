@@ -12,8 +12,14 @@ let results = await browserAPI.scripting.executeScript({
 
 results.then(
   results[0].result
-    ? (document.querySelector("#placeholder").textContent =
-        byteSize(results[0].result) / 1000 + "kB")
+    ? browserAPI.storage.local.get(["maxsize"]).then((storage) => {
+        document.querySelector("#placeholder").textContent =
+          byteSize(results[0].result) / 1000 +
+          "kB" +
+          "\n maxsize is " +
+          storage.maxsize +
+          "kB";
+      })
     : (document.querySelector("#placeholder").textContent =
         "OS Viewstate not found")
 );

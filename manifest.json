@@ -10,5 +10,9 @@
     "32": "images/icon-32.png",
     "128": "images/icon-128.png"
   },
-  "permissions": ["activeTab", "scripting"]
+  "options_ui": {
+    "page": "options/options.html",
+    "open_in_tab": true
+  },
+  "permissions": ["activeTab", "scripting", "storage"]
 }
