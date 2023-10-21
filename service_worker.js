@@ -15,10 +15,11 @@ const iconAlertPath = {
 };
 
 function alertIcon(message) {
-  const browserAPI = message.api;
-  message.alert
-    ? browserAPI.action.setIcon(iconAlertPath)
-    : browserAPI.action.setIcon(iconNormalPath);
+  if (message.alert) {
+    chrome.action.setIcon(iconAlertPath);
+  } else {
+    chrome.action.setIcon(iconNormalPath);
+  }
 }
 
-self.addEventListener("message", alertIcon);
+chrome.runtime.onMessage.addListener(alertIcon);

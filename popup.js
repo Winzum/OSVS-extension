@@ -28,7 +28,6 @@ results.then(
           "VS: " + osvsSize + "kB" + "\n Max: " + maxSize + "kB";
         browserAPI.runtime.sendMessage({
           alert: osvsSize > maxSize,
-          api: browserAPI,
         });
       })
     : (document.querySelector("#placeholder").textContent =
