@@ -21,4 +21,4 @@ function alertIcon(message) {
     : browserAPI.action.setIcon(iconNormalPath);
 }
 
-browserAPI.runtime.onMessage.addListener(alertIcon);
+self.addEventListener("message", alertIcon);

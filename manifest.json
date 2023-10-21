@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "OutSystems ViewState extension",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "action": {
     "default_popup": "popup.html"
   },
@@ -11,7 +11,8 @@
     "128": "images/icon-128.png"
   },
   "background": {
-    "scripts": ["background.js"]
+    "service_worker": "service_worker.js",
+    "type": "module"
   },
   "options_ui": {
     "page": "options/options.html",

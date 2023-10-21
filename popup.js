@@ -26,7 +26,10 @@ results.then(
 
         document.querySelector("#placeholder").textContent =
           "VS: " + osvsSize + "kB" + "\n Max: " + maxSize + "kB";
-        browserAPI.runtime.sendMessage({ alert: osvsSize > maxSize });
+        browserAPI.runtime.sendMessage({
+          alert: osvsSize > maxSize,
+          api: browserAPI,
+        });
       })
     : (document.querySelector("#placeholder").textContent =
         "OS Viewstate not found")
